@@ -11,7 +11,7 @@ struct Term {
 
 void sortPoly(Term term[], int nTerms) {
     for (int i = 0; i < nTerms; i++) {
-        for (int j = 0; j < nTerms; j++) {
+        for (int j = i; j < nTerms; j++) {
             if (term[i].expn < term[j].expn) {
                 Term temp = term[i];
                 term[i] = term[j];
@@ -45,9 +45,11 @@ public:
         struct Term add;//더하기용 구조체
         *this = a;
         nTerms += b.nTerms; //두항을 더해(일단은)
-        Term* temp = new Term[nTerms];//기존에 a에 있던 요소들을 저장할 배열
-        for (int i = 0; i < nTerms; i++) {
-            temp[i] = term[i];
+        cout << nTerms << endl;
+        cout << a.nTerms << endl;
+        Term* temp = new Term[a.nTerms];//기존에 a에 있던 요소들을 저장할 배열
+        for (int i = 0; i < a.nTerms; i++) {
+            temp[i] = a.term[i];
         }
         while (count < nTerms && bcount < b.nTerms) {
             if (temp[count].expn == b.term[bcount].expn) {
@@ -56,6 +58,7 @@ public:
                 term[start++] = add;
                 count++;
                 bcount++;
+                nTerms--;
             }
 
             else if (temp[count].expn > b.term[bcount].expn) {

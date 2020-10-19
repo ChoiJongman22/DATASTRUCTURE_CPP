@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 #define MAX 100
 
 using namespace std;
@@ -63,7 +64,7 @@ private:
 
 	void InsertCustomer(int arrivalTime) {
 		Customer a(++nCustomers, arrivalTime, RandServiceTime());
-		cout << " 고객 " << a.id << " 방문 (서비스 시간: " << a.tService << "분\n";
+		cout << " 고객 " << a.id << " 방문 (서비스 시간: " << a.tService << "분)\n";
 		que.enqueue(a);
 	}
 
@@ -105,6 +106,20 @@ public:
 	}
 
 	void printStat() {
+		cout << "=======================\n";
+		cout << "서비스 받은 고객수 =  " << nServedCustomers << "\n";
+		cout << "전체 대기 시간 = " << totalWaitTime << "\n";
+		cout << "서비스고객 평균대기시간 = " << (double)totalWaitTime / nServedCustomers << "\n";
+		cout << "현재 대기 고객 수 = " << nCustomers - nServedCustomers << "\n";
 
 	}
 };
+
+void main() {
+	srand((unsigned int)time(NULL));
+	BankSimulator sim;
+	sim.readSimulatorParameters();
+	sim.run();
+	sim.printStat();
+
+}

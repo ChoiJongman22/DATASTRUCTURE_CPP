@@ -13,6 +13,7 @@ int sequentialSearch(int array[],int n,int key){
 	}
 	return -1;
 }
+
 int main() {
 	int array[] = { 3,5,4,1,2,6,7 };
 	cout<< sequentialSearch(array, 7, 5);

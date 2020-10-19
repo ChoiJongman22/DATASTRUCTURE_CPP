@@ -158,7 +158,7 @@ int main() {
 
 	maze.searchExit(); //미로를 탐색해 출구를 찾음
 
-	maze.print();
+	
 
 	return 0;
 }

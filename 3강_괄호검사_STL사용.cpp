@@ -34,9 +34,10 @@ bool check(char* filename) {//string filename으로 하지말자
 	fclose(fp);
 	cout << "파일검사결과: " << filename << "\n";
 
-	if (s.empty()==true) {
+	if (s.empty()==false) {
 		cout << "문제발견! 라인수: " << nLine << " 문자수: " << nChar << "\n";
 	}
+	
 	else {
 		cout << "OK! 라인수: " << nLine << " 문자수: " << nChar << "\n";
 	}
@@ -45,5 +46,5 @@ bool check(char* filename) {//string filename으로 하지말자
 
 
 int main() {
-	check("괄호검사_STL사용.cpp");
+	check("괄호검사.txt");
 }
