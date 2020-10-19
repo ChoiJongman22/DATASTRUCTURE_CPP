@@ -31,7 +31,7 @@ public:
 		if (a.degree > b.degree) {
 			*this = a;
 			for (int i = 0; i <= b.degree; i++) {
-				coef[i + (degree - b.degree)] += b.coef[i];
+				coef[i + (degree - b.degree)] += b.coef[i];// coef[i+(degree-b.degree)]= coef[i+(degree-b.degree)]+b.coef[i]
 			}
 		}
 		else {
