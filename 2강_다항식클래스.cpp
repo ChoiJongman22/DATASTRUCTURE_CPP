@@ -22,7 +22,7 @@ public:
 	void display(string str = " Poly = ") {
 		cout << str;
 		for (int i = 0; i < degree; i++) {
-			cout << coef[i] << "x^" << degree - i << "+";
+			cout << coef[i] << "x^" << degree - i << "+ ";
 		}
 		cout << coef[degree];//»ó¼öÇ×
 	}

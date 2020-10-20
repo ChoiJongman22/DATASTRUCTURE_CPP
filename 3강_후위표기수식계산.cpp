@@ -42,7 +42,6 @@ double calcPostfixExpr(FILE* fp = stdin) {
 	while ((c = getc(fp)) != '\n') {
 		if (c == '+' || c == '-' || c == '*' || c == '/') {
 			double val2 = st.pop();
-			
 			double val1 = st.pop();
 			switch (c) {
 			case '+':st.push(val1 + val2); break;

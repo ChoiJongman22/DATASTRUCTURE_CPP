@@ -38,7 +38,7 @@ public:
 			cout << count + 1 << "번째 시도" << endl;
 			if (IsNewStudent()) {
 				student++;
-				random = rand() % 2;
+				random = rand() % 2; //0이냐 1이냐만 따져야하니까
 				if (!random) {
 					male.push(count);
 					m++;
@@ -70,26 +70,14 @@ public:
 		}
 	}
 	void printStat()
-
 	{
-
 		cout << "=================================================================" << endl;
-
 		cout << "미팅에 지원한 총 학생 수= " << maxStudent << endl;
-
 		cout << "미팅에 참여한 학생 수= " << student << endl;
-
 		cout << "성비(남학생:여학생) = " << m << " : " << f << endl;
-
 		cout << "성사된 커플 수= " << couple << endl;
-
 		cout << "안타까운 솔로들= " << maxStudent - 2 * (couple) << endl;
-
 	}
-
-
-
-
 };
 
 int main() {

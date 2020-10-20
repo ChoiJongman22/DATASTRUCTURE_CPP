@@ -17,8 +17,10 @@ int B(int n) {
 
 int C(int n) {
 	int sum = 0;
-	for(int i=0;i<=n;i++){
-		sum += 1 * i;
+	for(int i=1;i<=n;i++){
+		for (int j = 0; j < i; j++) {
+			sum += 1;
+		}
 	}
 	return sum;
 }

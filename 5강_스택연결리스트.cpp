@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
-
-
 class Node {
 private:
 	Node* link;
@@ -15,8 +12,6 @@ public:
 	void setLink(Node* p) { link = p; }
 	void display() { cout << data; }
 };
-
-
 
 class LinkedStack {
 private:
@@ -67,9 +62,4 @@ int main(){
 	cout << endl;
 	delete node;
 	st.display();
-
-
-
-
-
 }
